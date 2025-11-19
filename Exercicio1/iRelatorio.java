@@ -1,6 +1,6 @@
 package Exercicio1;
 
-public interface irRelatorio {
+public interface iRelatorio {
     void prepararRelatorio();
     void formatarRelatorio();
 }
