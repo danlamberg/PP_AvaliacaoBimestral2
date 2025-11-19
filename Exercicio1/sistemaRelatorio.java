@@ -1,17 +1,23 @@
 package Exercicio1;
 
 public class sistemaRelatorio {
+
+    public static void processarRelatorio(iFabricaRelatorio fabrica) {
+       
+        iRelatorio relatorio = fabrica.criarRelatorio();        
+        System.out.println("\nCriando Relatório");
+        relatorio.prepararRelatorio();
+        relatorio.formatarRelatorio();
+    }
+
     public static void main(String[] args) {
-        iRelatorio relatorio1 = new relatorioInicial();
-        relatorio1.prepararRelatorio();
-        relatorio1.formatarRelatorio();
+        iFabricaRelatorio fabricaInicial = new fabricaRelatorioInicial();
+        processarRelatorio(fabricaInicial);
 
-        iRelatorio relatorio2 = new relatorioDiario();
-        relatorio2.prepararRelatorio();
-        relatorio2.formatarRelatorio();
+        iFabricaRelatorio fabricaDiario = new fabricaRelatorioDiario();
+        processarRelatorio(fabricaDiario);
 
-        iRelatorio relatorio3 = new relatorioEmergencial();
-        relatorio3.prepararRelatorio();
-        relatorio3.formatarRelatorio();
+        iFabricaRelatorio fabricaEmergencial = new fabricaRelatorioEmergencial();
+        processarRelatorio(fabricaEmergencial);
     }
 }
